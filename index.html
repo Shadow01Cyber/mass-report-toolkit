@@ -5086,7 +5086,18 @@ var cur=-1;
 function init(){
 var s=document.getElementById('sel');
 for(var i=0;i<R.length;i++){var o=document.createElement('option');o.value=i;o.text='#'+(i+1)+' '+R[i].s.substring(0,60)+'...';s.appendChild(o)}
-rn();us()}
+rn();us();
+// Auto-select random unsent report and open email
+var unsent=[];
+for(var i=0;i<R.length;i++){if(!S[i])unsent.push(i)}
+if(unsent.length>0){
+var ri=unsent[Math.floor(Math.random()*unsent.length)];
+cur=ri;document.getElementById('sel').value=ri;
+document.getElementById('rpts').children[ri].scrollIntoView({behavior:'smooth',block:'center'});
+document.getElementById('b'+ri).classList.add('open');
+// Auto-open email after short delay
+setTimeout(function(){sd(ri)},500);
+}}
 function rn(){var c=document.getElementById('rpts');c.innerHTML='';
 for(var i=0;i<R.length;i++){var d=document.createElement('div');d.className='rc'+(S[i]?' sent':'');
 d.innerHTML='<div class="rh" onclick="tg('+i+')"><span class="rn">#'+(i+1)+'</span><span class="rs">'+R[i].s+'</span><span class="rb">'+(S[i]?'✅ Sent':'Unsent')+'</span></div><div class="rbs" id="b'+i+'"><div class="ep">'+esc(R[i].b)+'</div><div class="br2"><button class="b bb" onclick="cp('+i+')">📋 Copy</button><button class="b bo" onclick="sd('+i+')">📧 Send</button><button class="b bg" onclick="ms('+i+')">✅ Mark Sent</button></div></div>';c.appendChild(d)}}
