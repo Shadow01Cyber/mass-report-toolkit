@@ -3,62 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mass Report Toolkit - @Kont_Media</title>
+<title>Send Report — @Kont_Media</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0d1117;color:#c9d1d9;font-family:'Segoe UI',Tahoma,sans-serif}
-.hero{background:linear-gradient(135deg,#161b22,#1c2333);padding:25px 15px;text-align:center;border-bottom:2px solid #f0883e}
-.hero h1{color:#f0883e;font-size:18px;margin-bottom:5px}
-.hero p{color:#8b949e;font-size:12px}
-.stats{display:flex;gap:10px;justify-content:center;margin-top:10px;flex-wrap:wrap}
-.stat{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:8px 15px;text-align:center}
-.stat .n{color:#f0883e;font-size:20px;font-weight:bold}
-.stat .l{color:#8b949e;font-size:10px}
-.controls{background:#161b22;padding:12px 15px;border-bottom:1px solid #30363d;position:sticky;top:0;z-index:100}
-.ci{max-width:1000px;margin:0 auto;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.ci select{background:#0d1117;border:1px solid #30363d;color:#c9d1d9;padding:7px 10px;border-radius:5px;font-size:12px;flex:1;min-width:200px}
-.b{padding:7px 12px;border-radius:5px;border:none;cursor:pointer;font-weight:bold;font-size:11px;color:#fff}
-.bg{background:#238636}.bb{background:#1f6feb}.bo{background:#f0883e;color:#000}.br{background:#da3633}
-.prog{width:100%;height:3px;background:#21262d;border-radius:2px;margin-top:6px}
-.pf{height:100%;background:#238636;border-radius:2px;transition:width .3s;width:0%}
-.reports{max-width:1000px;margin:0 auto;padding:12px}
-.rc{background:#161b22;border:1px solid #30363d;border-radius:8px;margin-bottom:8px;overflow:hidden}
-.rc.sent{border-color:#238636}
-.rh{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;cursor:pointer;background:#1c2333}
-.rh .rn{color:#f0883e;font-weight:bold;font-size:12px;min-width:30px}
-.rh .rs{color:#c9d1d9;font-size:11px;flex:1;margin:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rh .rb{background:#21262d;color:#8b949e;font-size:9px;padding:2px 6px;border-radius:8px}
-.rbs{display:none;padding:14px}
-.rbs.open{display:block}
-.ep{background:#0d1117;border:1px solid #21262d;border-radius:5px;padding:12px;font-family:Consolas,monospace;font-size:10px;line-height:1.6;white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;margin-bottom:8px}
-.ep::-webkit-scrollbar{width:4px}
-.ep::-webkit-scrollbar-thumb{background:#30363d;border-radius:2px}
-.br2{display:flex;gap:5px;flex-wrap:wrap}
-.toast{position:fixed;bottom:15px;left:50%;transform:translateX(-50%);background:#238636;color:#fff;padding:8px 20px;border-radius:6px;font-size:12px;font-weight:bold;z-index:999;display:none}
-.toast.show{display:block}
-.footer{text-align:center;padding:20px;color:#484f58;font-size:10px;border-top:1px solid #21262d}
+body{background:#0d1117;color:#c9d1d9;font-family:'Segoe UI',Tahoma,sans-serif;min-height:100vh;display:flex;justify-content:center;align-items:center}
+.box{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:30px;max-width:500px;width:90%;text-align:center}
+h1{color:#f0883e;font-size:16px;margin-bottom:8px}
+p{color:#8b949e;font-size:12px;margin-bottom:20px}
+.num{color:#f0883e;font-size:48px;font-weight:bold;margin:15px 0}
+.subj{color:#c9d1d9;font-size:11px;background:#0d1117;padding:10px;border-radius:8px;border:1px solid #21262d;margin:10px 0;word-break:break-word}
+.btn{display:block;width:100%;padding:14px;border-radius:10px;border:none;font-size:16px;font-weight:bold;cursor:pointer;margin:8px 0;color:#fff}
+.b1{background:#238636}.b1:hover{background:#2ea043}
+.b2{background:#1f6feb}.b2:hover{background:#388bfd}
+.b3{background:#da3633}.b3:hover{background:#f85149}
+.b4{background:#30363d;color:#c9d1d9}.b4:hover{background:#3d444d}
+.done{color:#238636;font-size:14px;font-weight:bold;margin:10px 0}
+.rem{color:#8b949e;font-size:11px;margin-top:15px}
 </style>
 </head>
 <body>
-<div class="hero">
-<h1>⚡ Mass Report Toolkit - @Kont_Media</h1>
-<p>200 unique reports for abuse@telegram.org | Channel ID: -1002778167643</p>
-<div class="stats">
-<div class="stat"><div class="n" id="tc">200</div><div class="l">Total</div></div>
-<div class="stat"><div class="n" id="sc">0</div><div class="l">Sent</div></div>
-<div class="stat"><div class="n" id="rc">200</div><div class="l">Remaining</div></div>
-</div></div>
-<div class="controls"><div class="ci">
-<select id="sel" onchange="show(this.value)"><option value="-1">Select report...</option></select>
-<button class="b bg" onclick="rnd()">🎲 Random</button>
-<button class="b bb" onclick="cpC()">📋 Copy</button>
-<button class="b bo" onclick="sdC()">📧 Send</button>
-<button class="b bg" onclick="nx()">⚡ Next Uns</button>
-<button class="b br" onclick="rst()">🔄 Reset</button>
-</div><div class="prog"><div class="pf" id="pf"></div></div></div>
-<div class="reports" id="rpts"></div>
-<div class="footer">Send to: abuse@telegram.org | @Kont_Media (ID: -1002778167643) | @Adolf_media | @Shadow_Cyber</div>
-<div class="toast" id="toast"></div>
+<div class="box">
+<h1>📧 Mass Report — @Kont_Media</h1>
+<p>Channel ID: -1002778167643 | Auto-send to abuse@telegram.org</p>
+<div class="num" id="num">#1</div>
+<div class="subj" id="subj"></div>
+<div class="done" id="done"></div>
+<button class="btn b1" onclick="send()">📧 Send This Report</button>
+<button class="btn b2" onclick="next()">⚡ Skip — Send Next</button>
+<button class="btn b4" onclick="copy()">📋 Copy Text</button>
+<button class="btn b3" onclick="markDone()">✅ Mark Sent & Next</button>
+<div class="rem" id="rem"></div>
+</div>
 <script>
 var R=[{"s":`CRITICAL SAFETY: @Kont_Media (-1002778167643) — Endangers Lives`,"b":`I am filing this report to alert Telegram Trust & Safety to an urgent threat.
 
@@ -5081,39 +5056,60 @@ ACTION REQUESTED:
 1. Immediately suspend @Kont_Media, @Adolf_media, and @Shadow_Cyber
 2. Recover deleted messages from backend using message IDs
 3. Preserve all data for law enforcement`}];
-var S=JSON.parse(localStorage.getItem('km_s')||'{}');
+var S=JSON.parse(localStorage.getItem('km_s2')||'{}');
 var cur=-1;
-function init(){
-var s=document.getElementById('sel');
-for(var i=0;i<R.length;i++){var o=document.createElement('option');o.value=i;o.text='#'+(i+1)+' '+R[i].s.substring(0,60)+'...';s.appendChild(o)}
-rn();us();
-// Auto-select random unsent report and open email
 var unsent=[];
-for(var i=0;i<R.length;i++){if(!S[i])unsent.push(i)}
-if(unsent.length>0){
-var ri=unsent[Math.floor(Math.random()*unsent.length)];
-cur=ri;document.getElementById('sel').value=ri;
-document.getElementById('rpts').children[ri].scrollIntoView({behavior:'smooth',block:'center'});
-document.getElementById('b'+ri).classList.add('open');
-// Auto-open email after short delay
-setTimeout(function(){sd(ri)},500);
-}}
-function rn(){var c=document.getElementById('rpts');c.innerHTML='';
-for(var i=0;i<R.length;i++){var d=document.createElement('div');d.className='rc'+(S[i]?' sent':'');
-d.innerHTML='<div class="rh" onclick="tg('+i+')"><span class="rn">#'+(i+1)+'</span><span class="rs">'+R[i].s+'</span><span class="rb">'+(S[i]?'✅ Sent':'Unsent')+'</span></div><div class="rbs" id="b'+i+'"><div class="ep">'+esc(R[i].b)+'</div><div class="br2"><button class="b bb" onclick="cp('+i+')">📋 Copy</button><button class="b bo" onclick="sd('+i+')">📧 Send</button><button class="b bg" onclick="ms('+i+')">✅ Mark Sent</button></div></div>';c.appendChild(d)}}
-function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
-function tg(i){var e=document.getElementById('b'+i);e.classList.toggle('open');cur=i;document.getElementById('sel').value=i}
-function show(v){if(v<0)return;cur=+v;document.querySelectorAll('.rbs.open').forEach(function(x){x.classList.remove('open')});document.getElementById('b'+cur).classList.add('open')}
-function rnd(){var i=Math.floor(Math.random()*R.length);document.getElementById('sel').value=i;show(i);document.getElementById('rpts').children[i].scrollIntoView({behavior:'smooth',block:'center'})}
-function cp(i){navigator.clipboard.writeText(R[i].b).then(function(){ts('#'+(i+1)+' copied')})}
-function cpC(){if(cur>=0)cp(cur);else ts('Select a report first')}
-function sd(i){window.open('mailto:abuse@telegram.org?subject='+encodeURIComponent(R[i].s)+'&body='+encodeURIComponent(R[i].b),'_blank');ts('Opening email...')}
-function sdC(){if(cur>=0)sd(cur);else ts('Select a report first')}
-function ms(i){S[i]=1;localStorage.setItem('km_s',JSON.stringify(S));rn();us();ts('#'+(i+1)+' marked sent')}
-function nx(){for(var i=0;i<R.length;i++){if(!S[i]){sd(i);cur=i;document.getElementById('sel').value=i;document.getElementById('rpts').children[i].scrollIntoView({behavior:'smooth',block:'center'});return}}ts('All reports sent!')}
-function us(){var c=0;for(var k in S)if(S[k])c++;document.getElementById('sc').textContent=c;document.getElementById('rc').textContent=200-c;document.getElementById('pf').style.width=((c/200)*100)+'%'}
-function rst(){if(confirm('Reset all tracking?')){S={};localStorage.removeItem('km_s');rn();us();ts('Reset done')}}
-function ts(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2000)}
-init();
+for(var i=0;i<R.length;i++)if(!S[i])unsent.push(i);
+if(unsent.length===0){unsent=[];for(var i=0;i<R.length;i++)unsent.push(i);S={};localStorage.removeItem('km_s2')}
+
+function pick(){
+if(unsent.length===0)return-1;
+var idx=Math.floor(Math.random()*unsent.length);
+return unsent[idx];
+}
+
+function show(i){
+cur=i;
+document.getElementById('num').textContent='#'+(i+1);
+document.getElementById('subj').textContent=R[i].s;
+document.getElementById('done').textContent='';
+document.getElementById('rem').textContent=(200-Object.keys(S).length)+' reports remaining';
+}
+
+function send(){
+if(cur<0)return;
+var s=encodeURIComponent(R[cur].s);
+var b=encodeURIComponent(R[cur].b);
+window.location.href='mailto:abuse@telegram.org?subject='+s+'&body='+b;
+}
+
+function next(){
+var i=pick();
+if(i<0){document.getElementById('done').textContent='🎉 All reports sent!';return}
+show(i);
+send();
+}
+
+function copy(){
+if(cur<0)return;
+navigator.clipboard.writeText(R[cur].b).then(function(){document.getElementById('done').textContent='✅ Copied!';});
+}
+
+function markDone(){
+if(cur<0)return;
+S[cur]=1;
+localStorage.setItem('km_s2',JSON.stringify(S));
+unsent=unsent.filter(function(x){return x!==cur});
+next();
+}
+
+// Auto-pick and show
+var start=pick();
+if(start>=0){
+show(start);
+// Auto-send on load
+setTimeout(function(){send()},300);
+}
 </script>
-</body></html>
+</body>
+</html>
