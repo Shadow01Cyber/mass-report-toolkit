@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Email to Pavel Durov — @Kont_Media</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#c9d1d9;font-family:'Segoe UI',Tahoma,sans-serif;padding:15px}
+.box{max-width:800px;margin:0 auto;background:#161b22;border:1px solid #30363d;border-radius:12px;padding:25px}
+h1{color:#f0883e;font-size:16px;margin-bottom:15px;text-align:center}
+.field{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:12px;margin-bottom:10px;font-size:13px}
+.field label{color:#f0883e;font-weight:bold;display:block;margin-bottom:5px;font-size:11px}
+.field .val{color:#58a6ff;direction:ltr;text-align:left}
+.email-body{background:#0d1117;border:1px solid #21262d;border-radius:8px;padding:15px;font-family:Consolas,monospace;font-size:11px;line-height:1.8;white-space:pre-wrap;word-break:break-word;max-height:500px;overflow-y:auto;margin:15px 0;color:#c9d1d9}
+.btn{display:block;width:100%;padding:12px;border-radius:8px;border:none;font-size:14px;font-weight:bold;cursor:pointer;margin:8px 0;color:#fff}
+.b1{background:#238636}.b1:hover{background:#2ea043}
+.b2{background:#1f6feb}.b2:hover{background:#388bfd}
+.toast{position:fixed;bottom:15px;left:50%;transform:translateX(-50%);background:#238636;color:#fff;padding:8px 20px;border-radius:6px;font-size:12px;font-weight:bold;z-index:999;display:none}
+.toast.show{display:block}
+.note{color:#8b949e;font-size:11px;text-align:center;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>📧 Email to Pavel Durov — @Kont_Media Report</h1>
+
+<div class="field">
+<label>To:</label>
+<div class="val">durov@telegram.org</div>
+</div>
+
+<div class="field">
+<label>Subject:</label>
+<div class="val">URGENT: Criminal Channel @Kont_Media (-1002778167643) — Death Threats, Government Hacking, Doxxing, Weapons — Immediate Action Required</div>
+</div>
+
+<div class="email-body" id="emailBody">Dear Pavel Durov,
+
+I am writing to you directly because previous reports to abuse@telegram.org regarding a criminal Telegram channel have not resulted in adequate action. I believe this matter requires your personal attention.
+
+THE CHANNEL:
+
+Channel: @Kont_Media
+Numeric ID: -1002778167643
+Former name: @agahi_kont
+Subscribers: 12,000+
+Connected channels: @Adolf_media, @Shadow_Cyber
+
+THE VIOLATIONS:
+
+This channel has been used to commit the following crimes:
+
+1. DOXXING — Publishing complete identity packages (full names, phone numbers, national ID numbers, home addresses) of named individuals. Six people were designated as future targets.
+   Evidence: t.me/agahi_kont/3369, t.me/Adolf_media/5
+
+2. DEATH THREATS — Direct death threats against named individuals, open calls for violence, and threats against Iran's President.
+   Evidence: t.me/agahi_kont/75, t.me/agahi_kont/402, t.me/agahi_kont/386
+
+3. GOVERNMENT HACKING — The operator has admitted to hacking:
+   - FBI website (t.me/agahi_kont/3673)
+   - Israeli Ministry of Defense (t.me/agahi_kont/3904)
+   - UAE attack systems (t.me/agahi_kont/3155)
+   - Jordanian Patriot missile system (t.me/agahi_kont/4508)
+   - Israeli IT infrastructure (t.me/agahi_kont/3517)
+   - Fars News / Tehran prisons (t.me/agahi_kont/2804)
+   - Epstein email archives (t.me/agahi_kont/3066)
+   - Forensic medicine databases (t.me/agahi_kont/2758)
+   - Shahrag cyber operation (t.me/agahi_kont/1661)
+
+4. WEAPONS — Instructions for suicide FPV drones with thermobaric warheads (t.me/agahi_kont/1751) and explosives composition (t.me/agahi_kont/51).
+
+5. EVIDENCE DESTRUCTION — After prior reports were filed, the operator began systematically deleting all incriminating posts. The deleted messages remain recoverable from Telegram's backend using the message IDs above.
+
+WHY I AM WRITING TO YOU DIRECTLY:
+
+I have filed reports to abuse@telegram.org. The operator has responded by deleting evidence. I am concerned that without direct intervention, this criminal operation will continue unchecked.
+
+Telegram retains deleted message data on its servers. I am asking you to:
+
+1. Recover all deleted messages from @Kont_Media using the message IDs above
+2. Suspend @Kont_Media, @Adolf_media, and @Shadow_Cyber immediately
+3. Preserve all data (including IP logs and account metadata) for law enforcement referral
+4. Confirm that this report has been received and is being acted upon
+
+THE URGENCY:
+
+People have been doxxed. People have been threatened with death. The operator has confessed to hacking government systems. Instructions for building weapons of war have been shared. This is not a matter of content moderation — this is a matter of public safety.
+
+Every hour of delay means more evidence destroyed and more people at risk.
+
+I respectfully ask for your personal intervention on this matter.
+
+Sincerely,
+[Your Name]
+[Your Contact Information]</div>
+
+<button class="btn b1" onclick="send()">📧 Send to durov@telegram.org</button>
+<button class="btn b2" onclick="copy()">📋 Copy Text</button>
+<div class="note">Also send to: abuse@telegram.org (CC: durov@telegram.org)</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function send(){
+var subj="URGENT: Criminal Channel @Kont_Media (-1002778167643) — Death Threats, Government Hacking, Doxxing, Weapons — Immediate Action Required";
+var body=document.getElementById('emailBody').textContent;
+window.location.href='mailto:durov@telegram.org?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+}
+function copy(){
+navigator.clipboard.writeText(document.getElementById('emailBody').textContent).then(function(){
+var t=document.getElementById('toast');t.textContent='✅ Copied!';t.classList.add('show');
+setTimeout(function(){t.classList.remove('show')},2000);
+});
+}
+</script>
+</body>
+</html>
