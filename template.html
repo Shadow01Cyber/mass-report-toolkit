@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Send Report — @Kont_Media</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d1117;color:#c9d1d9;font-family:'Segoe UI',Tahoma,sans-serif;min-height:100vh;display:flex;justify-content:center;align-items:center}
+.box{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:30px;max-width:500px;width:90%;text-align:center}
+h1{color:#f0883e;font-size:16px;margin-bottom:8px}
+p{color:#8b949e;font-size:12px;margin-bottom:20px}
+.num{color:#f0883e;font-size:48px;font-weight:bold;margin:15px 0}
+.subj{color:#c9d1d9;font-size:11px;background:#0d1117;padding:10px;border-radius:8px;border:1px solid #21262d;margin:10px 0;word-break:break-word}
+.btn{display:block;width:100%;padding:14px;border-radius:10px;border:none;font-size:16px;font-weight:bold;cursor:pointer;margin:8px 0;color:#fff}
+.b1{background:#238636}.b1:hover{background:#2ea043}
+.b2{background:#1f6feb}.b2:hover{background:#388bfd}
+.b3{background:#da3633}.b3:hover{background:#f85149}
+.b4{background:#30363d;color:#c9d1d9}.b4:hover{background:#3d444d}
+.done{color:#238636;font-size:14px;font-weight:bold;margin:10px 0}
+.rem{color:#8b949e;font-size:11px;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>📧 Mass Report — @Kont_Media</h1>
+<p>Channel ID: -1002778167643 | Auto-send to abuse@telegram.org</p>
+<div class="num" id="num">#1</div>
+<div class="subj" id="subj"></div>
+<div class="done" id="done"></div>
+<button class="btn b1" onclick="send()">📧 Send This Report</button>
+<button class="btn b2" onclick="next()">⚡ Skip — Send Next</button>
+<button class="btn b4" onclick="copy()">📋 Copy Text</button>
+<button class="btn b3" onclick="markDone()">✅ Mark Sent & Next</button>
+<div class="rem" id="rem"></div>
+</div>
+<script>
+var R=REPORTS_PLACEHOLDER;
+var S=JSON.parse(localStorage.getItem('km_s2')||'{}');
+var cur=-1;
+var unsent=[];
+for(var i=0;i<R.length;i++)if(!S[i])unsent.push(i);
+if(unsent.length===0){unsent=[];for(var i=0;i<R.length;i++)unsent.push(i);S={};localStorage.removeItem('km_s2')}
+
+function pick(){
+if(unsent.length===0)return-1;
+var idx=Math.floor(Math.random()*unsent.length);
+return unsent[idx];
+}
+
+function show(i){
+cur=i;
+document.getElementById('num').textContent='#'+(i+1);
+document.getElementById('subj').textContent=R[i].s;
+document.getElementById('done').textContent='';
+document.getElementById('rem').textContent=(200-Object.keys(S).length)+' reports remaining';
+}
+
+function send(){
+if(cur<0)return;
+var s=encodeURIComponent(R[cur].s);
+var b=encodeURIComponent(R[cur].b);
+window.location.href='mailto:abuse@telegram.org?subject='+s+'&body='+b;
+}
+
+function next(){
+var i=pick();
+if(i<0){document.getElementById('done').textContent='🎉 All reports sent!';return}
+show(i);
+send();
+}
+
+function copy(){
+if(cur<0)return;
+navigator.clipboard.writeText(R[cur].b).then(function(){document.getElementById('done').textContent='✅ Copied!';});
+}
+
+function markDone(){
+if(cur<0)return;
+S[cur]=1;
+localStorage.setItem('km_s2',JSON.stringify(S));
+unsent=unsent.filter(function(x){return x!==cur});
+next();
+}
+
+// Auto-pick and show
+var start=pick();
+if(start>=0){
+show(start);
+// Auto-send on load
+setTimeout(function(){send()},300);
+}
+</script>
+</body>
+</html>
