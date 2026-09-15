@@ -6,183 +6,120 @@
 <title>EU DSA Report — @YeganHjAmir</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0d1117;color:#c9d1d9;padding:20px;line-height:1.7}
-.container{max-width:800px;margin:0 auto;background:#161b22;border:1px solid #30363d;border-radius:12px;padding:40px;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
-h1{color:#f0883e;font-size:1.6em;margin-bottom:8px}
-h2{color:#f0883e;font-size:1.2em;margin:24px 0 12px}
-.header-info{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:16px;margin:16px 0}
-.header-info p{margin:4px 0;font-size:0.95em}
-.header-info strong{color:#f0883e}
-.email-body{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:24px;margin:20px 0;white-space:pre-wrap;font-size:0.95em;line-height:1.8}
-.btn-row{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
-button{padding:14px 28px;border:none;border-radius:8px;font-size:1em;font-weight:700;cursor:pointer;transition:all 0.2s}
-.btn-send{background:#f0883e;color:#0d1117}
-.btn-send:hover{background:#ff9a3c}
-.btn-copy{background:#238636;color:#fff}
-.btn-copy:hover{background:#2ea043}
-.status{margin-top:12px;padding:10px;border-radius:6px;display:none;font-weight:600}
-.status.success{display:block;background:#23863633;color:#3fb950;border:1px solid #238636}
-.warning{background:#f0883e22;border:1px solid #f0883e;border-radius:8px;padding:16px;margin:16px 0;color:#f0883e;font-size:0.9em}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:#0d1117;color:#c9d1d9;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.card{background:#161b22;border:1px solid #30363d;border-radius:16px;padding:40px;max-width:500px;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+.emoji{font-size:3em;margin-bottom:16px}
+h1{color:#f0883e;font-size:1.4em;margin-bottom:8px}
+p{color:#8b949e;margin:4px 0;font-size:0.95em}
+.target{color:#3fb950;font-weight:700;margin:12px 0;font-size:1.05em}
+.countdown{font-size:2.5em;font-weight:700;color:#f0883e;margin:20px 0}
+.bar{height:6px;background:#21262d;border-radius:3px;margin:16px 0;overflow:hidden}
+.bar-fill{height:100%;background:linear-gradient(90deg,#f0883e,#ff6a33);width:0%;transition:width 1s linear}
+.skip{background:#21262d;color:#8b949e;border:1px solid #30363d;padding:12px 24px;border-radius:8px;font-size:0.95em;cursor:pointer;margin-top:12px}
+.skip:hover{background:#30363d;color:#c9d1d9}
 </style>
 </head>
 <body>
-<div class="container">
-<h1>🇪🇺 EU DSA Formal Complaint</h1>
-<p style="color:#8b949e;margin-bottom:8px">Digital Services Act — Articles 14, 16, 17, 40</p>
-
-<div class="header-info">
-<p><strong>To:</strong> dsa.telegram@edsr.eu (Telegram EU Digital Services Representative)</p>
-<p><strong>From:</strong> <span style="color:#f0883e;border-bottom:1px dashed #f0883e;padding:0 40px">YOU FILL THIS</span></p>
-<p><strong>Subject:</strong> URGENT — Non-consensual intimate imagery, blackmail, and extortion on @YeganHjAmir</p>
-<p><strong>Date:</strong> September 2026</p>
+<div class="card">
+<div class="emoji">🇪🇺</div>
+<h1>EU DSA Formal Complaint</h1>
+<p>dsa.telegram@edsr.eu</p>
+<div class="target">@YeganHjAmir — @ip_1998</div>
+<div class="countdown" id="cd">5</div>
+<div class="bar"><div class="bar-fill" id="bar"></div></div>
+<button class="skip" onclick="go()">Send now</button>
 </div>
+<script>
+const to='dsa.telegram@edsr.eu';
+const su='URGENT - Non-consensual intimate imagery, blackmail and extortion on @YeganHjAmir - EU DSA Article 16 complaint';
+const body=`
+FORMAL COMPLAINT UNDER EU DIGITAL SERVICES ACT (Regulation 2022/2065)
 
-<div class="warning">
-⚠️ This complaint is filed under the EU Digital Services Act (Regulation 2022/2065). Telegram is legally obligated to acknowledge receipt within 72 hours and provide an initial response within 1 month.
-</div>
+TO: Telegram EU Digital Services Representative (dsa.telegram@edsr.eu)
+RE: Illegal content — non-consensual intimate imagery, blackmail, and extortion
 
-<h2>1. COMPLAINANT</h2>
-<div class="email-body">I am filing this formal complaint under the EU Digital Services Act (Regulation 2022/2065) regarding illegal content hosted on the Telegram platform.
-
-I am a concerned citizen reporting serious violations of EU law occurring on a publicly accessible Telegram channel.</div>
-
-<h2>2. IDENTIFICATION OF THE SERVICE</h2>
-<div class="email-body">Platform: Telegram Messenger
+SERVICE IDENTIFIED:
+Platform: Telegram Messenger
 EU Representative: Telegram Group Services Limited (Dublin, Ireland)
-Contact: dsa.telegram@edsr.eu
+Channel: @YeganHjAmir (ID: -1002800797699)
+Operator: @ip_1998
 
-The platform is subject to the full scope of the Digital Services Act as a Very Large Online Platform (VLOP).</div>
+I am filing this formal complaint under the EU Digital Services Act regarding illegal content hosted on the Telegram platform.
 
-<h2>3. IDENTIFICATION OF ILLEGAL CONTENT</h2>
-<div class="email-body">Channel: @YeganHjAmir
-Channel ID: -1002800797699
-Channel Owner: @ip_1998
+IDENTIFICATION OF ILLEGAL CONTENT:
 
-The channel is dedicated to publishing stolen intimate photographs of women WITHOUT THEIR CONSENT, accompanied by degrading, dehumanizing, and sexually violent commentary. The operator profits from this abuse through Telegram Stars.
+The channel @YeganHjAmir is dedicated to publishing stolen intimate photographs of women WITHOUT THEIR CONSENT, accompanied by degrading, dehumanizing, and sexually violent commentary. The operator profits from this abuse through Telegram Stars.
 
 VIOLATIONS IDENTIFIED:
 
 1. NON-CONSENSUAL INTIMATE IMAGERY (NCII)
-   The operator systematically steals private intimate photographs from women and publishes them publicly without any consent. This constitutes a criminal offense under the laws of every EU member state.
+The operator systematically steals private intimate photographs from women and publishes them publicly without any consent. This constitutes a criminal offense under the laws of every EU member state.
 
 2. BLACKMAIL AND EXTORTION
-   The operator uses the threat of publishing intimate images to extort money and Telegram Stars from victims. Multiple victims have been identified begging for removal of their images in the comment sections.
+The operator uses the threat of publishing intimate images to extort money and Telegram Stars from victims. Multiple victims have been identified begging for removal of their images in the comment sections.
 
 3. TARGETED HARASSMENT AND CYBERSTALKING
-   The operator targets specific women with personalized degrading commentary designed to cause maximum psychological harm. Victims have reported deleting their accounts, changing phone numbers, and experiencing severe psychological trauma.
+The operator targets specific women with personalized degrading commentary designed to cause maximum psychological harm. Victims have reported deleting their accounts, changing phone numbers, and experiencing severe psychological trauma.
 
 4. PROFIT FROM ABUSE
-   The operator monetizes the distribution of non-consensual intimate images through Telegram Stars, creating a direct financial incentive for continued abuse.
+The operator monetizes the distribution of non-consensual intimate images through Telegram Stars, creating a direct financial incentive for continued abuse.
 
 5. DESTRUCTION OF EVIDENCE
-   Upon receiving abuse reports, the operator systematically deletes posts to evade moderation while maintaining the channel and continuing to publish new abusive content.</div>
+Upon receiving abuse reports, the operator systematically deletes posts to evade moderation while maintaining the channel and continuing to publish new abusive content.
 
-<h2>4. SPECIFIC EVIDENCE</h2>
-<div class="email-body">The following links contain illegal content (non-consensual intimate imagery, blackmail, and sexual harassment):
+SPECIFIC EVIDENCE (Non-consensual intimate imagery, blackmail, sexual harassment):
 
-PRIMARY EVIDENCE:
-• https://t.me/YeganHjAmir/539 — Blackmail and extortion evidence
-• https://t.me/YeganHjAmir/496 — Victim begging for removal of stolen photos
-• https://t.me/YeganHjAmir/443 — Non-consensual intimate imagery
-• https://t.me/YeganHjAmir/444 — Non-consensual intimate imagery with degrading commentary
-• https://t.me/YeganHjAmir/515 — Stolen intimate photographs with sexually violent captions
-• https://t.me/YeganHjAmir/501 — Additional non-consensual intimate imagery
-• https://t.me/YeganHjAmir/490 — Degrading commentary alongside stolen photos
-• https://t.me/YeganHjAmir/482 — Systematic publication of private images
-• https://t.me/YeganHjAmir/474 — Evidence of organized abuse operation</div>
+https://t.me/YeganHjAmir/539 — Blackmail and extortion evidence
+https://t.me/YeganHjAmir/496 — Victim begging for removal
+https://t.me/YeganHjAmir/443 — Non-consensual intimate imagery
+https://t.me/YeganHjAmir/444 — Degrading commentary on stolen photos
+https://t.me/YeganHjAmir/515 — Stolen intimate photographs
+https://t.me/YeganHjAmir/501 — Additional non-consensual imagery
+https://t.me/YeganHjAmir/490 — Degrading commentary alongside stolen photos
+https://t.me/YeganHjAmir/482 — Systematic publication of private images
+https://t.me/YeganHjAmir/474 — Organized abuse operation
 
-<h2>5. LEGAL BASIS</h2>
-<div class="email-body">This complaint is filed under the following provisions of the EU Digital Services Act (Regulation 2022/2065):
+LEGAL BASIS:
 
-Article 14 — Transparency Obligations:
-Telegram must provide clear information about its content moderation policies and enforcement actions. Victims and complainants have the right to receive a statement of reasons for any content moderation decision.
+Article 16 — Notice and Action: Telegram must act expeditiously to investigate and remove illegal content upon receiving a valid notice.
 
-Article 16 — Notice and Action Mechanisms:
-Telegram must provide effective, easy-to-use mechanisms for reporting illegal content. Upon receiving a valid notice, Telegram must act expeditiously to investigate and remove or disable access to the content.
+Article 17 — Statement of Reasons: Telegram must provide a clear statement of reasons for any decision regarding this content.
 
-Article 17 — Statement of Reasons:
-Telegram must provide a clear, specific statement of reasons for any decision taken regarding the reported content, including whether the content was removed, access was restricted, or the account was suspended.
+Article 14 — Transparency: Telegram must provide information about content moderation policies and enforcement actions.
 
-Article 40 — Data Access for Researchers:
-Researchers and civil society organizations must have access to data necessary to assess systemic risks on the platform.
+Article 40 — Data Access: Researchers must have access to data to assess systemic risks.
 
-ADDITIONAL LEGAL FRAMEWORK:
-• EU Regulation 2021/784 — Combatting the non-consensual sharing of intimate images
-• GDPR Article 17 — Right to erasure (victims have the right to demand removal)
-• Directive 2011/93/EU — Combatting sexual abuse and exploitation of children (where applicable)</div>
+Additional: EU Regulation 2021/784 (non-consensual intimate images), GDPR Article 17 (right to erasure), Directive 2011/93/EU.
 
-<h2>6. DEMANDED ACTIONS</h2>
-<div class="email-body">Under the EU Digital Services Act and applicable EU law, I demand the following actions:
+DEMANDED ACTIONS:
 
-1. IMMEDIATE REMOVAL of all content in the channel @YeganHjAmir that contains non-consensual intimate imagery, blackmail material, or sexually violent commentary.
+1. IMMEDIATE REMOVAL of all non-consensual intimate imagery, blackmail material, and sexually violent content from @YeganHjAmir.
 
-2. PERMANENT BAN of the channel @YeganHjAmir (ID: -1002800797699).
+2. PERMANENT BAN of channel @YeganHjAmir (ID: -1002800797699).
 
-3. PERMANENT SUSPENSION of the operator account @ip_1998 and any associated accounts.
+3. PERMANENT SUSPENSION of operator account @ip_1998 and all associated accounts.
 
-4. PRESERVATION of all evidence and metadata related to this channel for potential law enforcement requests.
+4. PRESERVATION of all evidence and metadata for law enforcement.
 
-5. FORMAL ACKNOWLEDGMENT of this complaint within 72 hours as required by Article 16 of the DSA.
+5. FORMAL ACKNOWLEDGMENT within 72 hours as required by Article 16 DSA.
 
 6. INITIAL RESPONSE within 1 month as required by the DSA.
 
-7. A STATEMENT OF REASONS as required by Article 17 of the DSA.
+7. STATEMENT OF REASONS as required by Article 17 DSA.
 
-FAILURE to comply with these requirements may result in:
-• Escalation to the European Commission
-• Formal DSA non-compliance proceedings
-• Potential fines of up to 6% of Telegram's annual global turnover under Article 52</div>
+NON-COMPLIANCE MAY RESULT IN:
+Escalation to the European Commission, formal DSA non-compliance proceedings, and fines of up to 6% of Telegram annual global turnover (Article 52).
 
-<h2>7. DECLARATION</h2>
-<div class="email-body">I declare that the information provided in this complaint is true and accurate to the best of my knowledge. I understand that filing a false report may have legal consequences.
+I declare this information is true and accurate. I request confirmation of receipt and a reference number.
 
-This complaint is made in good faith and based on direct observation of illegal content on the Telegram platform.
-
-I request confirmation of receipt of this complaint and a reference number for tracking purposes.</div>
-
-<div class="email-body" style="margin-top:24px;padding:0">
 Sincerely,
-
-[YOUR NAME]
-[YOUR EMAIL]
-[YOUR COUNTRY]
-</div>
-
-<div class="btn-row">
-<button class="btn-send" onclick="sendEmail()">📧 Send via Gmail</button>
-<button class="btn-copy" onclick="copyEmail()">📋 Copy to Clipboard</button>
-</div>
-<div id="status" class="status"></div>
-</div>
-
-<script>
-const to = 'dsa.telegram@edsr.eu';
-const subject = 'URGENT - Non-consensual intimate imagery, blackmail and extortion on @YeganHjAmir - EU DSA Article 16 complaint';
-
-function getBody() {
-  const el = document.querySelectorAll('.email-body');
-  let body = '';
-  el.forEach(e => { body += e.innerText + '\n\n'; });
-  return body.trim();
-}
-
-function sendEmail() {
-  const body = encodeURIComponent(getBody());
-  const url = `https://mail.google.com/mail/?view=cm&to=${to}&su=${encodeURIComponent(subject)}&body=${body}`;
-  window.location = url;
-  const s = document.getElementById('status');
-  s.className = 'status success';
-  s.innerText = 'Opening Gmail compose...';
-}
-
-function copyEmail() {
-  const full = `To: ${to}\nSubject: ${subject}\n\n${getBody()}`;
-  navigator.clipboard.writeText(full).then(() => {
-    const s = document.getElementById('status');
-    s.className = 'status success';
-    s.innerText = 'Copied to clipboard!';
-  });
-}
+[Mohamadreza Tashakori]
+[Tashakorimohamadreza301@gmail.com]
+[Iran]
+`.trim();
+function go(){window.location='mailto:'+to+'?subject='+encodeURIComponent(su)+'&body='+encodeURIComponent(body)}
+let s=5;const el=document.getElementById('cd'),bf=document.getElementById('bar');
+const iv=setInterval(()=>{s--;el.textContent=s;bf.style.width=((5-s)/5)*100+'%';if(s<=0){clearInterval(iv);go()}},1000);
 </script>
 </body>
 </html>
