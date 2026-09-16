@@ -30,130 +30,83 @@ p{color:#8b949e;margin:4px 0;font-size:0.95em}
 <button class="skip" onclick="go()">Send now</button>
 </div>
 <script>
-const to='abuse@telegram.org,privacy@telegram.org';
-const su='URGENT — Channel @EkhwanAlEraqion publishing personal phone numbers, photos and intimate details of Iranian women without consent — 274+ doxxing posts — immediate action required';
-const body=`FORMAL ABUSE REPORT — NON-CONSENSUAL PUBLISHING OF PERSONAL INFORMATION
+var to='abuse@telegram.org,privacy@telegram.org';
+var su='URGENT - Channel @EkhwanAlEraqion publishing personal phone numbers, photos and intimate details of Iranian women without consent - 274+ doxxing posts - immediate action required';
+var body='FORMAL ABUSE REPORT\n\n' +
+'To: Telegram Abuse Team / Privacy Team\n' +
+'Subject: Channel @EkhwanAlEraqion - Systematic doxxing of women with phone numbers, photos, and personal details\n\n' +
+'CHANNEL INFORMATION:\n' +
+'Main Channel: @EkhwanAlEraqion\n' +
+'Main Channel ID: -1004429332562\n' +
+'URL: https://t.me/EkhwanAlEraqion\n' +
+'Subscribers: 1,840+\n\n' +
+'Backup Channel: @TRP_MONEY\n' +
+'Backup Channel ID: -1003923900918\n' +
+'URL: https://t.me/TRP_MONEY\n\n' +
+'WARNING: The operator already has a backup channel ready. If the main channel is banned, the operator will immediately migrate to @TRP_MONEY and continue the doxxing operation. BOTH channels must be banned simultaneously.\n\n' +
+'REPORT SUMMARY:\n\n' +
+'I am reporting the Telegram channel @EkhwanAlEraqion for systematic doxxing and non-consensual publishing of personal information of Iranian women. This channel has published at least 274 posts containing:\n\n' +
+'1. PERSONAL PHONE NUMBERS published without consent\n' +
+'2. TELEGRAM USERNAMES of victims published alongside phone numbers\n' +
+'3. INTIMATE/POLAROID PHOTOS of women published without consent\n' +
+'4. DEGRADING AND SEXUALLY VIOLENT CAPTIONS describing each victim\n' +
+'5. PERSONAL DETAILS including names, locations, and physical descriptions\n\n' +
+'SPECIFIC EVIDENCE OF PHONE NUMBER EXPOSURE:\n\n' +
+'Post 1: Phone 09035647354 - Username @fajiih - https://t.me/EkhwanAlEraqion/1\n' +
+'Post 1: Phone 0989391771981 - Username @KBYsna - https://t.me/EkhwanAlEraqion/1\n' +
+'Post 16: Phone 989178619497 - Username @T_1zwt - https://t.me/EkhwanAlEraqion/16\n' +
+'Post 16: Phone 989335245708 - Username @Rehimht - https://t.me/EkhwanAlEraqion/16\n' +
+'Post 124: Phone 09907317990 - Username @Setiwpo - https://t.me/EkhwanAlEraqion/124\n' +
+'Post 141: Phone 09395545021 - Username @IRoonie_la13 - https://t.me/EkhwanAlEraqion/141\n' +
+'Post 147: Phone +989****2168 - Username @ZaRi027 - https://t.me/EkhwanAlEraqion/147\n' +
+'Post 147: Phone +989****7330 - Username @nexipesar7 - https://t.me/EkhwanAlEraqion/147\n' +
+'Post 161: Phone +989****2324 - Username @FARNIA_AS - https://t.me/EkhwanAlEraqion/161\n' +
+'Post 172: Phone +989****6937 - Username @bhrglstni - https://t.me/EkhwanAlEraqion/172\n' +
+'Post 271: Phone +989****5402 - Username @naarjesso - https://t.me/EkhwanAlEraqion/271\n' +
+'Post 271: Phone +989****7895 - https://t.me/EkhwanAlEraqion/271\n\n' +
+'WHAT THIS CHANNEL DOES:\n\n' +
+'The operator systematically:\n' +
+'1. Steals intimate/polaroid photos of Iranian women\n' +
+'2. Obtains their personal phone numbers\n' +
+'3. Publishes both photos and phone numbers together\n' +
+'4. Adds sexually degrading captions to each post\n' +
+'5. Encourages viewers to contact/harass the victims\n' +
+'6. Operates backup channel @TRP_MONEY in case main channel is banned\n\n' +
+'The channel description claims to share fashion and style photos which is FALSE. The actual content is non-consensual intimate imagery combined with personal phone number exposure.\n\n' +
+'VIOLATIONS:\n\n' +
+'1. NON-CONSENSUAL PUBLISHING OF PERSONAL INFORMATION (PHONE NUMBERS)\n' +
+'2. NON-CONSENSUAL INTIMATE IMAGERY\n' +
+'3. INCITEMENT TO HARASSMENT\n' +
+'4. FALSE CHANNEL DESCRIPTION\n' +
+'5. OPERATOR IS DELETING EVIDENCE\n\n' +
+'CRITICAL REQUEST - EVIDENCE PRESERVATION:\n\n' +
+'The operator has been observed deleting posts after reports are filed. I formally request that Telegram:\n' +
+'1. PRESERVE all server-side data immediately, including all deleted posts, photos, phone numbers, metadata, IP addresses, and account data\n' +
+'2. Do NOT inform the operator that data is being preserved\n' +
+'3. Make preserved data available for law enforcement\n\n' +
+'The operator may attempt to delete the channel entirely, delete specific posts, or create new backup channels. Please act immediately.\n\n' +
+'LEGAL FRAMEWORK:\n\n' +
+'- Telegram Terms of Service Section 7\n' +
+'- Telegram Privacy Policy\n' +
+'- EU GDPR Articles 5, 6, 9, 17\n' +
+'- EU DSA Articles 14, 16, 17\n' +
+'- Iranian cybercrime laws\n' +
+'- International conventions on non-consensual intimate imagery\n\n' +
+'DEMANDED ACTIONS:\n\n' +
+'1. IMMEDIATE REMOVAL of channel @EkhwanAlEraqion\n' +
+'2. PERMANENT BAN of the operator account\n' +
+'3. PRESERVATION of all evidence for law enforcement\n' +
+'4. PRESERVATION of all deleted content and metadata\n' +
+'5. BAN of backup channel @TRP_MONEY\n' +
+'6. FORMAL ACKNOWLEDGMENT within 72 hours\n' +
+'7. STATEMENT OF REASONS within 1 month\n\n' +
+'DECLARATION:\n\n' +
+'I declare that the information in this report is true and accurate.\n\n' +
+'The victims are real women whose personal phone numbers and intimate photos are being published without their consent. They are being subjected to harassment and psychological harm. This must stop immediately.';
 
-To: Telegram Abuse Team / Privacy Team
-Subject: Channel @EkhwanAlEraqion — Systematic doxxing of women with phone numbers, photos, and personal details
-
-CHANNEL INFORMATION:
-Main Channel: @EkhwanAlEraqion
-Main Channel ID: -1004429332562
-URL: https://t.me/EkhwanAlEraqion
-Subscribers: 1,840+
-
-Backup Channel: @TRP_MONEY
-Backup Channel ID: -1003923900918
-URL: https://t.me/TRP_MONEY
-
-WARNING: The operator already has a backup channel ready. If the main channel is banned, the operator will immediately migrate to @TRP_MONEY and continue the doxxing operation. BOTH channels must be banned simultaneously to prevent this.
-
-REPORT SUMMARY:
-
-I am reporting the Telegram channel @EkhwanAlEraqion for systematic doxxing and non-consensual publishing of personal information of Iranian women. This channel has published at least 274 posts containing:
-
-1. PERSONAL PHONE NUMBERS published without consent
-2. TELEGRAM USERNAMES of victims published alongside phone numbers
-3. INTIMATE/POLAROID PHOTOS of women published without consent
-4. DEGRADING AND SEXUALLY VIOLENT CAPTIONS describing each victim
-5. PERSONAL DETAILS including names, locations, and physical descriptions
-
-SPECIFIC EVIDENCE OF PHONE NUMBER EXPOSURE:
-
-Post 1: Phone 09035647354 — Username @fajiih
-Post 1: Phone 0989391771981 — Username @KBYsna
-Post 16: Phone 989178619497 — Username @T_1zwt
-Post 16: Phone 989335245708 — Username @Rehimht
-Post 124: Phone 09907317990 — Username @Setiwpo
-Post 141: Phone 09395545021 — Username @IRoonie_la13
-Post 147: Phone +989****2168 — Username @ZaRi027
-Post 147: Phone +989****7330 — Username @nexipesar7
-Post 161: Phone +989****2324 — Username @FARNIA_AS
-Post 172: Phone +989****6937 — Username @bhrglstni
-Post 271: Phone +989****5402 — Username @naarjesso
-Post 271: Phone +989****7895 — (no username)
-
-Additional phone numbers found in posts:
-- 0989391771981 (Post 39)
-- 989178619497 (Post 42)
-- 989335245708 (Post 44)
-- 09907317990 (Post 119)
-- 09395545021 (Post 136)
-
-WHAT THIS CHANNEL DOES:
-
-The operator of this channel systematically:
-1. Steals intimate/polaroid photos of Iranian women
-2. Obtains their personal phone numbers (possibly through social engineering or hacking)
-3. Publishes both photos and phone numbers together in single posts
-4. Adds sexually degrading and dehumanizing captions to each post
-5. Encourages viewers to contact/harass the victims using the published phone numbers
-6. Operates a backup channel (@TRP_Money) in case the main channel is banned
-
-The channel description states it shares "coordinated fashion & style photos of Iranian models" which is a FALSE description designed to evade moderation. The actual content is non-consensual intimate imagery combined with personal phone number exposure.
-
-VIOLATIONS:
-
-1. NON-CONSENSUAL PUBLISHING OF PERSONAL INFORMATION (PHONE NUMBERS)
-The channel publishes personal phone numbers of women without their consent. This is doxxing and is illegal in most jurisdictions.
-
-2. NON-CONSENSUAL INTIMATE IMAGERY
-The channel publishes intimate/polaroid photos of women without their consent.
-
-3. INCITEMENT TO HARASSMENT
-By publishing phone numbers alongside degrading captions, the operator is inciting viewers to contact and harass the victims.
-
-4. FALSE CHANNEL DESCRIPTION
-The channel description claims to share "fashion & style photos" when the actual content is doxxing and intimate image abuse.
-
-5. OPERATOR IS DELETING EVIDENCE
-The operator has been observed deleting posts after reports are filed. Telegram must preserve server-side data including all deleted posts, phone numbers, photos, and metadata for law enforcement purposes.
-
-CRITICAL REQUEST — EVIDENCE PRESERVATION:
-
-The operator of this channel has been observed systematically deleting posts after receiving abuse reports. This is a deliberate attempt to destroy evidence.
-
-I formally request that Telegram:
-1. PRESERVE all server-side data for this channel immediately, including:
-   - All deleted posts and their content
-   - All photos and media files
-   - All phone numbers published
-   - All metadata (IP addresses, device info, timestamps)
-   - Account creation data and linked phone numbers
-2. Do NOT inform the operator that data is being preserved
-3. Make preserved data available for law enforcement upon request
-
-The operator may attempt to:
-- Delete the channel entirely
-- Delete specific posts containing phone numbers
-- Modify the channel description
-- Create new backup channels
-
-Please act immediately to preserve evidence before it is destroyed.
-
-LEGAL FRAMEWORK:
-
-This channel violates:
-- Telegram Terms of Service Section 7 (Privacy and Intellectual Property)
-- Telegram Privacy Policy (non-consensual sharing of personal data)
-- EU General Data Protection Regulation (GDPR) Articles 5, 6, 9, 17
-- EU Digital Services Act (DSA) Articles 14, 16, 17
-- Iranian cybercrime laws regarding privacy violations
-- International conventions on non-consensual intimate imagery
-
-DEMANDED ACTIONS:
-
-1. IMMEDIATE REMOVAL of channel @EkhwanAlEraqion
-2. PERMANENT BAN of the operator account
-3. PRESERVATION of all evidence for law enforcement
-4. PRESERVATION of all deleted content and metadata
-5. BAN of backup channel @TRP_Money if connected to the same operator
-6. FORMAL ACKNOWLEDGMENT of this report within 72 hours
-7. STATEMENT OF REASONS within 1 month
-
-DECLARATION:
-
-I declare that the information in this report is true and accurate.
-
-The victims in this case are real women whose personal phone numbers and intimate photos are being published without their consent. They are being subjected to harassment and psychological harm. This must stop immediately.
+function go(){window.location='mailto:'+to+'?subject='+encodeURIComponent(su)+'&body='+encodeURIComponent(body)}
+var s=5;var el=document.getElementById('cd');var bf=document.getElementById('bar');
+var iv=setInterval(function(){s--;el.textContent=s;bf.style.width=((5-s)/5)*100+'%';if(s<=0){clearInterval(iv);go()}},1000);
+</script>
+</body>
+</html>
